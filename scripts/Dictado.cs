@@ -7,8 +7,6 @@ using UnityEngine.Windows.Speech;
 public class Dictado : MonoBehaviour
 {
     public Text mensaje;
-    private Text hipotetico;
-    private Text reconocido;
     private DictationRecognizer dictado;
     private static bool activoDictado;
 
@@ -33,17 +31,11 @@ public class Dictado : MonoBehaviour
     {
         Debug.LogFormat("Dictado resultado: {0}", texto);
         Mensaje(texto);
-        if (reconocido != null) {
-            reconocido.text += texto + "\n";
-        }
     }
 
     void Hipotetico(string texto)
     {
         Debug.LogFormat("Dictado hipótesis: {0}", texto);
-        if (hipotetico != null) {
-            hipotetico.text += texto;
-        }
     }
 
     void Causa(DictationCompletionCause causa)
